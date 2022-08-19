@@ -75,11 +75,11 @@
 </div>
 
 <br>
+<h1>My Movies</h1>
 
 </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>My movies</h1>
       <ul class="list-group mb-3">
         <% @movies.each do |movie| %>
           <li class="list-group-item">
@@ -87,6 +87,6 @@
           </li>
         <% end %>
       </ul>
-      <%= link_to "Add a new movie", new_movie_path, class: 'btn btn-primary' %>
+      <%= link_to "Add a List", new_movie_path, class: 'btn btn-primary' %>
     </div>
 </div>

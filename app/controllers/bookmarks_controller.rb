@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: :destroy
-  before_action :set_movie, only: [:new, :create]
+  before_action :set_list, only: [:new, :create]
 
   def new
     @bookmark = Bookmark.new
@@ -8,9 +8,9 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.movie = @movie
+    @bookmark.list = @list
     if @bookmark.save
-      redirect_to movie_path(@movie)
+      redirect_to list_path(@list)
     else
       render :new
     end
@@ -18,7 +18,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark.destroy
-    redirect_to movie_path(@bookmark.movie), status: :see_other
+    redirect_to list_path(@bookmark.list), status: :see_other
   end
 
   private
@@ -31,7 +31,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
   end
 
-  def set_movie
-    @movie = Movie.find(params[:movie_id])
+  def set_list
+    @list = List.find(params[:list_id])
   end
 end

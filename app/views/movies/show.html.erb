@@ -18,9 +18,11 @@
           </tr>
         </tbody>
       </table>
-
-      <%= simple_form_for [@movie] do |f| %>
-        <%= f.input :rating, collection: 0..5 %>
+      <br>
+      <h1>Add a List</h1>
+      <%= simple_form_for @movie do |f| %>
+        <%= f.input :title %>
+        <%= f.input :overview %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
       <br>
