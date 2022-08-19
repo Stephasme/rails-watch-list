@@ -40,6 +40,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 gem "dotenv-rails", groups: [:development, :test]
 
+gem "cloudinary"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
